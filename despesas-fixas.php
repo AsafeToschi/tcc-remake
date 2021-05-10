@@ -31,7 +31,7 @@ $pagina = "caixa";
              <div id="app">
                 <v-app id="inspire">
                   <div class="elevation-1">
-                    <v-toolbar flat color="white">
+                    <v-toolbar text color="white">
                         <v-dialog v-model="dialog1" max-width="600px">
                         <v-btn slot="activator" color="primary" dark class="mb-2">Adicionar Receita</v-btn>
                         <v-card>
@@ -49,7 +49,6 @@ $pagina = "caixa";
                                     v-model="datapicker"
                                     :nudge-right="40"
                                     :return-value.sync="date"
-                                    lazy
                                     transition="scale-transition"
                                     offset-y
                                   >
@@ -87,8 +86,8 @@ $pagina = "caixa";
                 
                           <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn color="blue darken-1" flat @click="dialog1 = false">Cancelar</v-btn>
-                            <v-btn color="blue darken-1" flat type='submit'>Salvar</v-btn>
+                            <v-btn color="blue darken-1" text @click="dialog1 = false">Cancelar</v-btn>
+                            <v-btn color="blue darken-1" text type='submit'>Salvar</v-btn>
                           </v-card-actions>
                         </v-card>
                         </form>
@@ -113,7 +112,6 @@ $pagina = "caixa";
                                     v-model="datapicker2"
                                     :nudge-right="40"
                                     :return-value.sync="date"
-                                    lazy
                                     transition="scale-transition"
                                     offset-y
                                   >
@@ -149,8 +147,8 @@ $pagina = "caixa";
                 
                           <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn color="blue darken-1" flat @click.native="close">Cancelar</v-btn>
-                            <v-btn color="blue darken-1" flat  type='submit'>Salvar</v-btn>
+                            <v-btn color="blue darken-1" text @click.native="close">Cancelar</v-btn>
+                            <v-btn color="blue darken-1" text  type='submit'>Salvar</v-btn>
                           </v-card-actions>
                         </v-card>
                         </form>
@@ -167,13 +165,13 @@ $pagina = "caixa";
                     <v-data-table
                       :headers="headers"
                       :items="contarecebimento"
-                      :rows-per-page-items="rowsPerPageItems"
-                      rows-per-page-text="Linhas por página"
+                      :footer-props.items-per-page-options="footerProps"
+                      footer-props.items-per-page-text="Linhas por página"
                       no-results-text="Nenhum resultado encontrado"
                       :items="contarecebimento"
                       :search="search"
-                      item-key="descricao"
-                      :pagination.sync="pagination"
+                      item-key="id"
+                      :options.sync="options"
                     >
                       <template slot="items" slot-scope="props">
                         
@@ -260,9 +258,10 @@ function Onlynumbers(e)
   }
  new Vue({
       el: '#app',
+      vuetify: new Vuetify(),
       data: () => ({
-        rowsPerPageItems: [5, 10, 25, 50],
-        pagination: {
+        footerProps: {'items-per-page-options': [5, 10, 25, 50]},
+        options: {
           rowsPerPage: 10,
           descending: true
         },

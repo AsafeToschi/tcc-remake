@@ -130,7 +130,7 @@ $logado = $_SESSION['nome'];
 		  
 		      <v-card-actions>
 		        <v-btn
-		          flat
+		          text
 		          @click='back'
 		        >
 		          Voltar
@@ -162,6 +162,7 @@ $logado = $_SESSION['nome'];
 <script>
 new Vue({
   el: '#app',
+  vuetify: new Vuetify(),
   data: () => ({
 	show2: false,
 	confirm: false,

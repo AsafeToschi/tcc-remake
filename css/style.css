@@ -32,9 +32,9 @@ body {
 	margin: 14px 10px 0 0;
 	float: right;
 }
-.header .text-xs-right{
+.header .text-sm-right{
 	color: #FFFFFF!important;
-	margin-top: 1.5px;
+	margin-top: 6.5px;
 }
 .v_menu_header.v-card.theme--light{
 	width: 100%!important;

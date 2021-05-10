@@ -29,14 +29,14 @@ date_default_timezone_set('America/Sao_Paulo');
   <div class="logo">
     <span><img src="images/alfatec-logo.png"></span>
   </div>
-  <div class="text-xs-right">
+  <div class="text-sm-right">
     <span>
       <?php echo " Olá, ".$_SESSION['nome']; ?> 
     </span>
     <!-- notificações -->
     <v-menu class="btn-notificacoes"  bottom left v-model="notificacoes" transition="slide-y-transition" <?php if ($numero_avisos == 0){ echo "disabled onclick='alerta()' style='cursor:pointer;'";}?> :close-on-content-click="false" >
       <v-btn <?php if ($numero_avisos != 0){ echo " style='margin-left:20px;'";}?>
-        slot="activator" flat dark icon>
+        slot="activator" text dark icon>
         <?php if ($numero_avisos != 0){ echo "
         <v-badge left>
           <span slot='badge'>".$numero_avisos."</span> ";}?><!-- Contar o numero de avisos e colocar AQUI!! -->
@@ -51,7 +51,7 @@ date_default_timezone_set('America/Sao_Paulo');
         <!-- /// Não retirar - botão 'close' /// --> 
         <span style="position: absolute; top: 5px;left: 10px;">Você tem <b><?php echo $numero_avisos; ?></b> avisos.</span>
         <span style="position: absolute; top: 5px;right: 50px;">Atualizado em: <?php echo date('d/m/Y H:i'); ?></span>
-        <v-btn class="close_header_icon" icon small flat @click="notificacoes = false"><i class="fas fa-times"></i> </v-btn>
+        <v-btn class="close_header_icon" icon small text @click="notificacoes = false"><i class="fas fa-times"></i> </v-btn>
         <div class="notificacoes-container">
 
         <?php
@@ -122,13 +122,13 @@ echo "
     <!-- logoff - criar usuários -->
     <v-menu bottom left v-model="menu" transition="slide-y-transition" :close-on-content-click="false">
       <v-btn
-        slot="activator" flat dark icon>
+        slot="activator" text dark icon>
         <v-icon >more_vert</v-icon>
       </v-btn>
 
       <v-card class="v_menu_header">
         <!-- /// Não retirar - botão 'close' /// -->
-        <v-btn class="close_header_icon" icon small flat @click="menu = false"><i class="fas fa-times"></i> </v-btn>
+        <v-btn class="close_header_icon" icon small text @click="menu = false"><i class="fas fa-times"></i> </v-btn>
 
         <a href="novousuario.php"><i class="fas fa-user-plus"></i> Criar Usuário</a>
         
@@ -151,7 +151,7 @@ echo "
       
                 <v-btn
                   color="green darken-1"
-                  flat="flat"
+                  text="text"
                   @click="dialogSair = false"
                   class="text-xs-left"
                 >
@@ -161,7 +161,7 @@ echo "
                   <v-btn
                   type="submit"
                   color="red darken-1"
-                  flat="flat"
+                  text="text"
                   @click="dialogSair = false"
                   >
                     Sair do Sistema

@@ -472,7 +472,7 @@ jQuery.extend( {
 			}
 		}
 
-		// Flatten any nested arrays
+		// textten any nested arrays
 		return concat.apply( [], ret );
 	},
 
@@ -5592,7 +5592,7 @@ function fixInput( src, dest ) {
 
 function domManip( collection, args, callback, ignored ) {
 
-	// Flatten any nested arrays
+	// textten any nested arrays
 	args = concat.apply( [], args );
 
 	var fragment, first, scripts, hasScripts, node, doc,
@@ -8417,15 +8417,15 @@ function inspectPrefiltersOrTransports( structure, options, originalOptions, jqX
 }
 
 // A special extend for ajax options
-// that takes "flat" options (not to be deep extended)
+// that takes "text" options (not to be deep extended)
 // Fixes #9887
 function ajaxExtend( target, src ) {
 	var key, deep,
-		flatOptions = jQuery.ajaxSettings.flatOptions || {};
+		textOptions = jQuery.ajaxSettings.textOptions || {};
 
 	for ( key in src ) {
 		if ( src[ key ] !== undefined ) {
-			( flatOptions[ key ] ? target : ( deep || ( deep = {} ) ) )[ key ] = src[ key ];
+			( textOptions[ key ] ? target : ( deep || ( deep = {} ) ) )[ key ] = src[ key ];
 		}
 	}
 	if ( deep ) {
@@ -8664,7 +8664,7 @@ jQuery.extend( {
 		// you can add your own custom options here if
 		// and when you create one that shouldn't be
 		// deep extended (see ajaxExtend)
-		flatOptions: {
+		textOptions: {
 			url: true,
 			context: true
 		}

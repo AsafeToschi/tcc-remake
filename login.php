@@ -59,7 +59,7 @@
 		      <v-card-actions>
 		      <v-spacer></v-spacer>
 		        <v-btn
-		          flat
+		          text
 		          @click='clear'
 		        >
 		          Limpar
@@ -89,6 +89,7 @@
 <script>
 new Vue({
   el: '#app',
+  vuetify: new Vuetify(),
   data: () => ({
 	show2: false,
     Title: 'Login',

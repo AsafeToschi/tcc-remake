@@ -114,6 +114,7 @@ echo"
 <script>
   new Vue({
     el: '#app',
+    vuetify: new Vuetify(),
     data: () => ({
       menu: false,
       notificacoes: false,
